@@ -6,7 +6,7 @@ _RegSet* handler(_Event ev, _RegSet *regs) {
     case _EVENT_IRQ_TIME:
       printf(".");
       break;
-    case _EVENT_IRQ_IODEV: 
+    
       while (1) {
         int key = _read_key();
         if (key == _KEY_NONE) break;
@@ -33,5 +33,5 @@ int main(){
   assert(!_istatus(1));
   _make(_heap, main, 0);
   while (1) _trap();
-  return 0;
+ 
 }

@@ -10,7 +10,7 @@ enum { OP_TYPE_REG, OP_TYPE_MEM, OP_TYPE_IMM };
 #define OP_STR_SIZE 40
 
 typedef struct {
-  uint32_t type;
+
   int width;
   union {
     uint32_t reg;
@@ -22,14 +22,7 @@ typedef struct {
   char str[OP_STR_SIZE];
 } Operand;
 
-typedef struct {
-  uint32_t opcode;
-  vaddr_t seq_eip;  // sequential eip
-  bool is_operand_size_16;
-  uint8_t ext_opcode;
-  bool is_jmp;
-  vaddr_t jmp_eip;
-  Operand src, dest, src2;
+
 #ifdef DEBUG
   char assembly[80];
   char asm_buf[128];
